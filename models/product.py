@@ -9,7 +9,7 @@ class ProductProduct(models.Model):
     @api.depends('display_name')
     def _compute_short_name(self):
         for record in self:
-            result = re.search(r'^(\[.*\]\s)*(.*)$', record.display_name)
+            result = re.search(r'^([.*]\s)*(.*)$', record.display_name)
             short = result.group(2)
             record.short_name = short    
 
