@@ -8,6 +8,10 @@
         <xpath expr="//td[@name='td_name']" position="before">
             <td name="td_code" class="text-monospace"><span t-field="line.product_id.code"/></td>
         </xpath>
+        <xpath expr="//td[@name='td_name']" position="before">
+            <t t-set="line" t-value="line.with_context(display_default_code=False)"/>
+        </xpath>
+
     </template>
 
 </odoo>
